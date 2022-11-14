@@ -22,16 +22,21 @@ public class ShowDOS extends Show {
 
         for (int i = 0; i < map.getHigh(); i++) {
             for (int j = 0; j < map.getWidth(); j++) {
-                if ( map.isBox( i , j )) {
-                    showBox();
-                } else if ( map.isWall( i , j )) {
+                if ( map.isWall( i , j )) {
                     showWall();
-                } else if ( map.isTarger( i , j ) && map.isCharacter( i , j ) ) {
-                    showCharacterAndTarger();
-                } else if ( map.isTarger( i , j )) {
-                    showTarger();
+                }  else if ( map.isTarger( i , j )) {
+                    if ( map.isCharacter( i , j ) ){
+                        showCharacterAndTarger();
+                    } else if ( map.isBox( i , j ) ) {
+                        showBoxAndTarger();
+                    }else {
+                        showTarger();
+                    }
+
                 } else if ( map.isCharacter( i , j )) {
                     showCharacter();
+                } else if ( map.isBox( i , j )) {
+                    showBox();
                 } else {
                     showNULL();
                 }
@@ -52,7 +57,7 @@ public class ShowDOS extends Show {
         
     }
     public void showBox(){
-        System.out.print("箱"+gap);
+        System.out.print("口"+gap);
         
     }
     public void showCharacter(){
@@ -62,6 +67,10 @@ public class ShowDOS extends Show {
 
     public void showCharacterAndTarger(){
         System.out.print("太"+gap);
+    }
+
+    public void showBoxAndTarger(){
+        System.out.print("回"+gap);
     }
 
     public void newLine(){
