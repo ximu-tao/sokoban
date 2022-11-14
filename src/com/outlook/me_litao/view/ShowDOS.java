@@ -26,6 +26,8 @@ public class ShowDOS extends Show {
                     showBox();
                 } else if ( map.isWall( i , j )) {
                     showWall();
+                } else if ( map.isTarger( i , j ) && map.isCharacter( i , j ) ) {
+                    showCharacterAndTarger();
                 } else if ( map.isTarger( i , j )) {
                     showTarger();
                 } else if ( map.isCharacter( i , j )) {
@@ -56,6 +58,10 @@ public class ShowDOS extends Show {
     public void showCharacter(){
         System.out.print("人"+gap);
 
+    }
+
+    public void showCharacterAndTarger(){
+        System.out.print("太"+gap);
     }
 
     public void newLine(){
