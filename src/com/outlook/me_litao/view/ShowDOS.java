@@ -78,8 +78,21 @@ public class ShowDOS extends Show {
     }
 
     public void winning(){
-
-        System.out.print("胜利");
+        try {
+            cls();
+        } catch (IOException | InterruptedException ignored) {
+        }
+        System.out.print("\n" +
+                "\n" +
+                "           _             _             \n" +
+                "          (_)           (_)            \n" +
+                " __      ___ _ __  _ __  _ _ __   __ _ \n" +
+                " \\ \\ /\\ / / | '_ \\| '_ \\| | '_ \\ / _` |\n" +
+                "  \\ V  V /| | | | | | | | | | | | (_| |\n" +
+                "   \\_/\\_/ |_|_| |_|_| |_|_|_| |_|\\__, |\n" +
+                "                                  __/ |\n" +
+                "                                 |___/ \n" +
+                "\n");
     }
     
 }
