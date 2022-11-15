@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class ShowDOS extends Show {
     
-    char gap = '\t';
+    String gap = " ";
 
     private static void cls() 
     throws IOException , InterruptedException {
@@ -46,7 +46,8 @@ public class ShowDOS extends Show {
     }
     
     public void showNULL(){
-        System.out.print(" "+gap);
+        // 半角空格地图会乱, 所以这里使用全角空格
+        System.out.print("　"+gap);
     }
     
     public void showTarger(){
