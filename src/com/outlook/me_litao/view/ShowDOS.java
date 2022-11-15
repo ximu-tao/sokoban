@@ -11,6 +11,15 @@ public class ShowDOS extends Show {
         new ProcessBuilder( "cmd" , "/c" , "cls")
         .inheritIO().start().waitFor();
     }
+
+    private void welcome(){
+        System.out.println("欢迎来到推箱子小游戏");
+    }
+
+    private void showTip(){
+        System.out.println("游戏目标: 将箱子(口)推到目标点(丶), 控制你的人物(人)开始行动吧! ");
+        System.out.println("提示: (回)表示 箱子在目标点上, (太)表示 人物在目标点上");
+    }
     
     
     public void refreshMap(){
@@ -19,6 +28,8 @@ public class ShowDOS extends Show {
         } catch (IOException | InterruptedException e){
             e.printStackTrace();
         }
+        welcome();
+        showTip();
 
         for (int i = 0; i < map.getHigh(); i++) {
             for (int j = 0; j < map.getWidth(); j++) {
