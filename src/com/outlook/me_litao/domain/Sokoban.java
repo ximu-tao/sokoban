@@ -112,17 +112,18 @@ public class Sokoban {
         moveTo(fromX, fromY);
     }
 
+    private void checkWinning(){
+        if ( map.getTargerCount() == 0){
+            this.show.winning();
+            throw new Winning();
+        }
+    }
+
     /**
      * 移动人物 从 from 到 to
      */
     private final void move( int moveX , int moveY ) {
         pushBoxTo( cP[0]+moveX , cP[1]+moveY , cP[0]+moveX*2 , cP[1]+moveY*2 );
-        refreshMap();
-        if ( map.getTargerCount() == 0){
-            this.show.winning();
-            throw new Winning();
-        }
-        return ;
     }
 
     private final void move( int[] move ){
@@ -136,6 +137,8 @@ public class Sokoban {
         try{
             while ( true ){
                 move( this.o.getOperating() );
+                refreshMap();
+                checkWinning();
             }
         } catch ( Winning w){
             return;
