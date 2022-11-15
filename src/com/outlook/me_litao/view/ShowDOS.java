@@ -90,10 +90,6 @@ public class ShowDOS extends Show {
     }
 
     public void winning(){
-        try {
-            cls();
-        } catch (IOException | InterruptedException ignored) {
-        }
         System.out.print("\n" +
                 "\n" +
                 "           _             _             \n" +
