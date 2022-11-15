@@ -6,7 +6,13 @@ import com.outlook.me_litao.model.SokobanMap;
 import com.outlook.me_litao.view.Show;
 
 /**
- * Map
+ * 游戏的主要程序逻辑,
+ * 例如
+ * 从 Operating 中获取用户操作
+ * 判断是否能向指定方向移动
+ * 判断是否能推动指定方向的箱子
+ * 修改地图数据
+ * 胜利判定等
  */
 
 public class Sokoban {
@@ -120,7 +126,7 @@ public class Sokoban {
     }
 
     /**
-     * 移动人物 从 from 到 to
+     * 以偏移量移动人物
      */
     private final void move( int moveX , int moveY ) {
         pushBoxTo( cP[0]+moveX , cP[1]+moveY , cP[0]+moveX*2 , cP[1]+moveY*2 );
