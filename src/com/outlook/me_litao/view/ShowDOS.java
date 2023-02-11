@@ -15,10 +15,16 @@ public class ShowDOS extends Show {
     
     String gap = " ";
 
-    private static void cls() 
-    throws IOException , InterruptedException {
+    private static void cls() {
+         try{
+//        Linux 系统的清屏方式
+        System.out.print("\033c");
+
+//        Windows 系统的清屏方式
         new ProcessBuilder( "cmd" , "/c" , "cls")
         .inheritIO().start().waitFor();
+        } catch (IOException | InterruptedException ignored){
+        }
     }
 
     private void welcome(){
@@ -32,11 +38,9 @@ public class ShowDOS extends Show {
     
     
     public void refreshMap(){
-        try{
-            cls();
-        } catch (IOException | InterruptedException e){
-            e.printStackTrace();
-        }
+
+        cls();
+
         welcome();
         showTip();
 
