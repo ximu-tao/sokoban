@@ -1,3 +1,16 @@
+# 推箱子游戏
+> 一个运行在终端窗口的推箱子小游戏
+
+## 游玩
+前往 [Releases](https://github.com/ximu-tao/sokoban/releases/) 下载游戏jar包
+
+下载sokoban.jar后，使用```java -jar sokoban.jar```命令运行游戏
+
+### 运行效果
+![sokoban游戏运行效果](https://s3.bmp.ovh/imgs/2023/02/11/0fb9ecaa6dcd9cb9.png)
+
+### 游戏胜利
+![sokoban游戏胜利效果](https://s3.bmp.ovh/imgs/2023/02/11/939c0bdde3c15375.png)
 # 推箱子游戏结构
 
 ## 接口定义
